@@ -1,2 +1,2 @@
 # tbskarantina
-https://tbsapp.tarbil.gov.tr/Default.aspx Adresi için Seçilerbilir çıkış kaıları listesi ekleme
+https://tbsapp.tarbil.gov.tr/Default.aspx Adresi için Seçilebilir çıkış kapıları listesi ekleme
