@@ -15,7 +15,7 @@
   // Dropdown options (separate options with commas)
   const dropdownOptions = [
   { value: '33-ITH1-2025-', explanation: 'Mersin          :' },
-  { value: '33-ITH1-2024-', explanation: 'Mersin-2024     :' },
+  { value: '33-ITH1-2024-', explanation: 'Mersin-24     :' },
   { value: '22-ITH1-2025-', explanation: 'Edirne          :' },
   { value: '04-ITH1-2025-', explanation: 'Gürbulak-Ağrı   :' },
   { value: '08-ITH1-2025-', explanation: 'Sarp-Artvin     :' },
