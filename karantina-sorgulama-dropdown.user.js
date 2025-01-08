@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Karantina Sorgulama Dropdown Liste Güncellenen
 // @namespace   violentmonkey
-// @version     2.1
+// @version     2.11
 // @description Karantina BSS Uygunluk Sorgulama Sayfasına Sık Kullanılan Kapıların Sayı Başlangıçlarını Ekleme
 // @match       https://tbsapp.tarbil.gov.tr/Reports/ReportViewDynamic.aspx?report=*
 // @grant       none
@@ -42,7 +42,7 @@
         { value: '33-IADE1-2025-', explanation: 'İhraç İadesi    :' },
     ];
 
-    // Scrollbar stilini ekle
+    // Add scrollbar style
     const style = document.createElement('style');
     style.textContent = `
         .dropdown-list::-webkit-scrollbar {
@@ -107,7 +107,6 @@
         dropdownList.style.listStyle = 'none';
         dropdownList.style.padding = '0';
         dropdownList.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.2)';
-
         dropdownList.style.scrollbarColor = '#4CAF50 #333';
 
         // Create year buttons
@@ -148,7 +147,7 @@
                 const li = document.createElement('li');
                 li.textContent = `${option.explanation} ${option.value}`;
 
-                // Liste elemanı stilleri
+                // List item styles
                 li.style.padding = '3px';
                 li.style.cursor = 'pointer';
                 li.style.color = '#FEFFFC';
@@ -158,29 +157,22 @@
                 li.style.whiteSpace = "nowrap";
                 li.style.borderBottom = "1px solid #4CAF50";
 
-                // Son eleman için border kaldır
+                // Remove border for last item
                 if (filteredOptions[filteredOptions.length - 1] === option) {
                     li.style.borderBottom = "none";
                 }
 
-// populateDropdownList fonksiyonu içinde, li click event listener'ı:
-li.addEventListener('click', () => {
-    setDefaultInputValue(option.value);
-    dropdownList.style.display = 'none';
-    setTimeout(() => {  // Kısa bir gecikme ile arama alanını temizle
-        searchInput.value = '';
-    }, 50);
-});
+                li.addEventListener('click', () => {
+                    setDefaultInputValue(option.value);
+                    dropdownList.style.display = 'none';
+                    setTimeout(() => {
+                        searchInput.value = '';
+                    }, 50);
+                });
 
                 li.addEventListener('mouseout', () => {
                     li.style.backgroundColor = 'transparent';
                     li.style.color = '#FEFFFC';
-                });
-
-                li.addEventListener('click', () => {
-                    searchInput.value = `${option.explanation} ${option.value}`;
-                    setDefaultInputValue(option.value);
-                    dropdownList.style.display = 'none';
                 });
 
                 dropdownList.appendChild(li);
@@ -203,33 +195,31 @@ li.addEventListener('click', () => {
             }
         });
 
-// Buton click event listener'larını da güncelleyelim:
-button2024.addEventListener('click', (event) => {
-    event.preventDefault();
-    currentOptions = dropdownOptions2024;
-    populateDropdownList();
-    setDefaultInputValue(dropdownOptions2024[0].value);
-    setTimeout(() => {
-        searchInput.value = '';
-    }, 50);
-});
+        button2024.addEventListener('click', (event) => {
+            event.preventDefault();
+            currentOptions = dropdownOptions2024;
+            populateDropdownList();
+            setDefaultInputValue(dropdownOptions2024[0].value);
+            setTimeout(() => {
+                searchInput.value = '';
+            }, 50);
+        });
 
-button2025.addEventListener('click', (event) => {
-    event.preventDefault();
-    currentOptions = dropdownOptions2025;
-    populateDropdownList();
-    setDefaultInputValue(dropdownOptions2025[0].value);
-    setTimeout(() => {
-        searchInput.value = '';
-    }, 50);
-});
+        button2025.addEventListener('click', (event) => {
+            event.preventDefault();
+            currentOptions = dropdownOptions2025;
+            populateDropdownList();
+            setDefaultInputValue(dropdownOptions2025[0].value);
+            setTimeout(() => {
+                searchInput.value = '';
+            }, 50);
+        });
 
-      // searchInput'un blur event'ini de ekleyelim:
-searchInput.addEventListener('blur', () => {
-    setTimeout(() => {
-        searchInput.value = '';
-    }, 100);
-});
+        searchInput.addEventListener('blur', () => {
+            setTimeout(() => {
+                searchInput.value = '';
+            }, 100);
+        });
 
         // Create container for buttons and dropdown
         const container = document.createElement('div');
