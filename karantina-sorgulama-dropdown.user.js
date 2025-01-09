@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Karantina Sorgulama Dropdown Liste Güncellenen
 // @namespace   violentmonkey
-// @version     2.15
+// @version     2.16
 // @description Karantina BSS Uygunluk Sorgulama Sayfasına Sık Kullanılan Kapıların Sayı Başlangıçlarını Ekleme
 // @match       https://tbsapp.tarbil.gov.tr/Reports/ReportViewDynamic.aspx?report=*
 // @grant       none
@@ -189,14 +189,27 @@
             populateDropdownList(searchInput.value);
         });
 
-        // searchInput event listener'larına bunu ekleyelim:
 searchInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         event.preventDefault(); // Varsayılan enter davranışını engelle
-        // View Report butonunu bul ve tıkla
+        
+        // View Report butonunu bul
         const viewReportButton = document.getElementById('ctl00_ctl00_bodyCPH_ContentPlaceHolder1_ReportViewerMain_ctl04_ctl00');
         if (viewReportButton) {
+            // Önce input değerinin değişmesini engelle
+            const currentValue = document.getElementById('ctl00_ctl00_bodyCPH_ContentPlaceHolder1_ReportViewerMain_ctl04_ctl03_txtValue').value;
+            
+            // Butona tıkla
             viewReportButton.click();
+            
+            // Değerin değişmesini önlemek için kısa bir gecikme ile tekrar set et
+            setTimeout(() => {
+                const inputField = document.getElementById('ctl00_ctl00_bodyCPH_ContentPlaceHolder1_ReportViewerMain_ctl04_ctl03_txtValue');
+                if (inputField && inputField.value !== currentValue) {
+                    inputField.value = currentValue;
+                }
+                // Arama alanını temizle
+            }, 50);
         }
     }
 });
