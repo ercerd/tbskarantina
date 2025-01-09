@@ -188,6 +188,18 @@
             dropdownList.style.display = 'block';
             populateDropdownList(searchInput.value);
         });
+
+        // searchInput event listener'larına bunu ekleyelim:
+searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Varsayılan enter davranışını engelle
+        // View Report butonunu bul ve tıkla
+        const viewReportButton = document.getElementById('ctl00_ctl00_bodyCPH_ContentPlaceHolder1_ReportViewerMain_ctl04_ctl00');
+        if (viewReportButton) {
+            viewReportButton.click();
+        }
+    }
+});
         
         document.addEventListener('click', (e) => {
             if (!dropdownContainer.contains(e.target)) {
