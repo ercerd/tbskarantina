@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Karantina Sorgulama Dropdown Liste Güncellenen
 // @namespace   violentmonkey
-// @version     2.16
+// @version     2.17
 // @description Karantina BSS Uygunluk Sorgulama Sayfasına Sık Kullanılan Kapıların Sayı Başlangıçlarını Ekleme
 // @match       https://tbsapp.tarbil.gov.tr/Reports/ReportViewDynamic.aspx?report=*
 // @grant       none
