@@ -24,6 +24,7 @@
        { value: '75-ITH1-2024-', explanation: 'Aktaş-Türkgözü-Ardahan:' },
        { value: '76-ITH2-2024-', explanation: 'Dilucu-Iğdır    :' },
        { value: '31-ITH1-2024-', explanation: 'Hatay           :' },
+       { value: '73-ITH1-2024-', explanation: 'Habur            :' },
        { value: '33-IADE1-2024-', explanation: 'İhraç İadesi    :' },
    ];
 
@@ -39,6 +40,7 @@
        { value: '75-ITH1-2025-', explanation: 'Aktaş-Türkgözü-Ardahan:' },
        { value: '76-ITH2-2025-', explanation: 'Dilucu-Iğdır    :' },
        { value: '31-ITH1-2025-', explanation: 'Hatay           :' },
+       { value: '73-ITH1-2024-', explanation: 'Habur            :' },
        { value: '33-IADE1-2025-', explanation: 'İhraç İadesi    :' },
    ];
 
