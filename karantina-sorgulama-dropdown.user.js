@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Karantina Sorgulama Dropdown Liste Güncellenen
 // @namespace   violentmonkey
-// @version     2.41
+// @version     2.42
 // @description Karantina BSS Uygunluk Sorgulama Sayfasına Sık Kullanılan Kapıların Sayı Başlangıçlarını Ekleme
 // @match       https://tbsapp.tarbil.gov.tr/Reports/ReportViewDynamic.aspx?report=*
 // @grant       none
@@ -40,7 +40,7 @@
        { value: '75-ITH1-2025-', explanation: 'Aktaş-Türkgözü-Ardahan:' },
        { value: '76-ITH2-2025-', explanation: 'Dilucu-Iğdır    :' },
        { value: '31-ITH1-2025-', explanation: 'Hatay           :' },
-       { value: '73-ITH1-2024-', explanation: 'Habur            :' },
+       { value: '73-ITH1-2025-', explanation: 'Habur            :' },
        { value: '33-IADE1-2025-', explanation: 'İhraç İadesi    :' },
    ];
 
